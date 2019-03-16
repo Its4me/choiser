@@ -12,7 +12,7 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$choiser-primary: mat-palette($mat-indigo);
+$choiser-primary: mat-palette($mat-orange, 500);
 $choiser-accent: mat-palette($mat-pink, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
@@ -27,11 +27,17 @@ $choiser-theme: mat-light-theme($choiser-primary, $choiser-accent, $choiser-warn
 @include angular-material-theme($choiser-theme);
 
 /* You can add global styles to this file, and also import other style files */
+@import './src/app/var.scss'; 
+
+.mat-form-field-appearance-legacy mat-hint{
+    color: $primary-t!important;
+}
 body{
     padding: 0;
     margin: 0;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
+    
 }
 *{
     box-sizing: border-box;
@@ -39,4 +45,9 @@ body{
     padding: 0;
 }
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.register .mat-horizontal-stepper-header-container {
+    display: none;
+}
+.register .mat-horizontal-content-container{
+    padding: 1em 0;
+}
