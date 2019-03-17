@@ -1,3 +1,4 @@
+import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
@@ -8,8 +9,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatStepperModule } from '@angular/material/stepper';
 import { FormsModule } from '@angular/forms';
 import { MatRadioModule } from '@angular/material/radio';
+import { HttpClientModule } from '@angular/common/http';
 
-import { AppRoutingModule } from './../app-routing.module';
 
 @NgModule({
   declarations: [],
@@ -20,9 +21,10 @@ import { AppRoutingModule } from './../app-routing.module';
     ReactiveFormsModule,
     MatInputModule,
     MatButtonModule,
-    AppRoutingModule,
     MatStepperModule,
-    MatRadioModule
+    MatRadioModule,
+    RouterModule,
+    HttpClientModule
   ],
   imports: [
     CommonModule
