@@ -10,7 +10,7 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { FormsModule } from '@angular/forms';
 import { MatRadioModule } from '@angular/material/radio';
 import { HttpClientModule } from '@angular/common/http';
-
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 @NgModule({
   declarations: [],
@@ -24,7 +24,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatStepperModule,
     MatRadioModule,
     RouterModule,
-    HttpClientModule
+    HttpClientModule,
+    MatAutocompleteModule
   ],
   imports: [
     CommonModule

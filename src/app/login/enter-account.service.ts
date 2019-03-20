@@ -17,15 +17,9 @@ export class EnterAccountService {
 
 
 
-    async getCities(){
-    return await this.http.get<any>(this.citiesUrl).toPromise().then((res) =>{
-     
-      let a = res.areas;
-      console.log(res, a);
-      res = res.areas;
-      
-    });
-    
+  async getCities(){
+    return await this.http.get<any>(this.citiesUrl).toPromise();
   }
+  
 
 }
