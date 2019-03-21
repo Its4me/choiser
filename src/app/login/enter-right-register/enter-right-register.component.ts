@@ -1,8 +1,10 @@
 import { EnterAccountService } from './../enter-account.service';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-import { map } from 'rxjs/operators';
+import { map, startWith } from 'rxjs/operators';
 import { Observable } from 'rxjs';
+import { async } from '@angular/core/testing';
+
 @Component({
   selector: 'app-enter-right-register',
   templateUrl: './enter-right-register.component.html',
@@ -67,7 +69,12 @@ export class EnterRightRegisterComponent implements OnInit {
     this.register[2] =  this.formBuilder.group({
       region: new FormControl('', Validators.required ),
       city: new FormControl({value: 'Выберите область', disabled: true}, Validators.required )
-     });
+     }, 
+      { validators: [
+        this.regionValidation('region', true), 
+        this.regionValidation('city', false)
+      ]},
+     );
   
     }
  
@@ -75,6 +82,7 @@ export class EnterRightRegisterComponent implements OnInit {
   ngOnInit() {
     this.register[2].controls['region'].valueChanges
     .pipe(
+      startWith(''),
       map(value => this._filter(value, this.regions))
     ).subscribe(
       res => {
@@ -99,7 +107,6 @@ export class EnterRightRegisterComponent implements OnInit {
     }else{
       return;
     }
-    
   }
   selectRegion(){
     let selectedRegion = this.register[2].get('region').value;
@@ -153,5 +160,23 @@ export class EnterRightRegisterComponent implements OnInit {
             matchingControl.setErrors(null);
         }
     }
+  }
+  private regionValidation(region: string, choseArray: boolean) {
+    return (formGroup: FormGroup) => {
+        const control = formGroup.controls[region];
+        let array: any = choseArray? this.regions : this.cities;
+        let checkError: boolean = true;
+        if(array){
+          array.forEach(reg => {
+            if(reg.name == control.value){
+              checkError = false;
+            }
+          });
+        }
+       
+        checkError? control.setErrors({ unkwounRegion: true }) : control.setErrors(null);
+
+    }
+
   }
 }
