@@ -84,7 +84,7 @@
             <mat-radio-button color="primary" value="female">Девушка</mat-radio-button>
           </div>
           <mat-error class="custom-error" *ngIf="register[1].get('sex').errors && poleSexInvalid">
-            Что у вас между ног?
+            Выберите ваш пол
           </mat-error>
         </mat-radio-group>
           <mat-form-field class="form-input">
@@ -96,7 +96,7 @@
             Минимум 2 символа
           </mat-error>
           <mat-error *ngIf="register[1].get('nickname').errors?.required">
-            Введите вашу фамилию
+            Тут должен быть ваш ник
           </mat-error>
       </mat-form-field>
         <button mat-raised-button color="primary" matStepperPrevious>Назад</button>

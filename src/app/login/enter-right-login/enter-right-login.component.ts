@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators} from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-enter-right-login',
@@ -20,11 +21,18 @@ export class EnterRightLoginComponent implements OnInit {
     ]))
   });
 
-  constructor() {
+  constructor(
+    public router: Router
+  ) {
    }
 
   ngOnInit() {
   }
- 
+  enterAccount(){
+    if(this.login.invalid){
+      return;
+    }
+    this.router.navigate(['/choise']);
+  }
 
 }
