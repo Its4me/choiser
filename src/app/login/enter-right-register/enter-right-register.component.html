@@ -1,4 +1,5 @@
 <h2>Регистрация</h2>
+<p class="text">Уже есть аккаунт? <a routerLink="/login">Войдите</a>.</p>
 <div class="register">
   <mat-horizontal-stepper [linear]="true"  #stepper>
     <mat-step [formGroup]="register[0]">
@@ -100,7 +101,7 @@
       </mat-form-field>
         <button mat-raised-button color="primary" matStepperPrevious>Назад</button>
         
-        <ng-container *ngIf="!stepValid( 1 ,'name', 'lastname', 'sex'); else nextButton1">   
+        <ng-container *ngIf="!stepValid( 1 ,'name', 'lastname', 'sex', 'nickname'); else nextButton1">   
           <button mat-raised-button color="primary" matStepperNext (click)="getCities()">Дальше</button>
         </ng-container>
         <ng-template #nextButton1>
