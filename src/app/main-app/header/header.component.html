@@ -1,8 +1,34 @@
-<header>
-  <div class="container">
-    <div class="row">
-      header
+<aside>
+  <header>
+    <img src="assets/logo.png" alt="">
+  </header>
+  <div class="head">
+    <div class="img-wrapper">
+      <img src="assets/avatar.jpg" alt="">
+    </div>
+    <div class="text-wrapper">
+      <div class="name">Ваше уёбищное имя</div>
     </div>
   </div>
-</header>
-<router-outlet></router-outlet>
+  <nav>
+    <button mat-button>
+      <i class="fas fa-hand-pointer"></i>
+      Выбирай
+    </button>
+    <button mat-button>
+      <i class="material-icons">
+        signal_cellular_alt
+      </i>
+      Топ
+    </button>
+  </nav>
+  <footer>
+    Сделано 185 комнатой<br>
+    без участия 90<br>
+    Без уважения Ярослав для Ярыка
+  </footer>
+</aside>
+<main>
+  <router-outlet></router-outlet>
+</main>
+

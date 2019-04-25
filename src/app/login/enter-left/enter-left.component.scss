@@ -1,12 +1,8 @@
+@import '../../var.scss';
 :host {
     float: left;
     width: 50%;
-    background: #ff8f00; /* Old browsers */
-    background: -moz-linear-gradient(left, #ff8f00 0%, #ffc85d 100%, #ffc85d 100%, #ffc85d 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(left, #ff8f00 0%,#ffc85d 100%,#ffc85d 100%,#ffc85d 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to right, #ff8f00 0%,#ffc85d 100%,#ffc85d 100%,#ffc85d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff8f00', endColorstr='#ffc85d',GradientType=1 ); /* IE6-9 */
-
+    background: $gradient;
 }
 .content{
     padding: 1em;
