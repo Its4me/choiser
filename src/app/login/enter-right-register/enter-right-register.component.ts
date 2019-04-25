@@ -125,7 +125,9 @@ export class EnterRightRegisterComponent implements OnInit {
       this.register[2].get('city').setValue('Выберите область');
     }
   }
-
+  go(radioMale){
+    console.log(radioMale);
+  }
   
 
   

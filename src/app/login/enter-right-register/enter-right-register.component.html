@@ -80,14 +80,26 @@
         </mat-form-field>
         <mat-radio-group formControlName="sex" class="form-input" required>
           <div class="radio-input">
-            <mat-radio-button color="primary" value="male">Парень</mat-radio-button>
-            <mat-radio-button color="primary" value="female">Девушка</mat-radio-button>
+            <div 
+              class="radio-button"
+              (click)="radioMale.click()"
+              [ngClass]="{'active-radio': radioMale.checked}">
+              Парень
+            </div>
+            <div 
+              class="radio-button" 
+              (click)="radioFemale.click()"
+              [ngClass]="{'active-radio': radioFemale.checked}">
+              Девушка
+            </div>
+            <input type="radio" class="hidden-radio" color="primary" name="sex" #radioMale value="male">
+            <input type="radio" class="hidden-radio" color="primary" name="sex" #radioFemale value="female">
           </div>
           <mat-error class="custom-error" *ngIf="register[1].get('sex').errors && poleSexInvalid">
             Выберите ваш пол
           </mat-error>
         </mat-radio-group>
-          <mat-form-field class="form-input">
+        <mat-form-field class="form-input">
         <input matInput formControlName="nickname" placeholder="Ник">
         <mat-hint *ngIf="register[1].get('nickname').dirty && register[1].get('nickname').valid">
             Вааау
@@ -98,7 +110,7 @@
           <mat-error *ngIf="register[1].get('nickname').errors?.required">
             Тут должен быть ваш ник
           </mat-error>
-      </mat-form-field>
+        </mat-form-field>
         <button mat-raised-button color="primary" matStepperPrevious>Назад</button>
         
         <ng-container *ngIf="!stepValid( 1 ,'name', 'lastname', 'sex', 'nickname'); else nextButton1">   
