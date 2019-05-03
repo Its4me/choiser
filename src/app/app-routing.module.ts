@@ -1,11 +1,11 @@
-import { ChoiseComponent } from './main-app/choise/choise.component';
+
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { EnterAccountComponent } from './login/enter-account/enter-account.component';
 import { EnterRightLoginComponent } from './login/enter-right-login/enter-right-login.component';
 import { EnterRightRegisterComponent } from './login/enter-right-register/enter-right-register.component';
 import { HeaderComponent } from './main-app/header/header.component';
-
+import { ChoiseComponent } from './main-app/choise/choise-component/choise.component';
 
 const routes: Routes = [
   { path: '', component: HeaderComponent, children: [

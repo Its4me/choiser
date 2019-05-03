@@ -1,0 +1,23 @@
+.choise-photo{
+    display: flex;
+    justify-content: space-between;
+    float: left;
+    height: 100%;
+}
+.choise{
+    padding: 0 5em;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.button-wrapper{
+    width: 100%;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    float: left;
+    display: flex;
+    justify-content: center;
+}

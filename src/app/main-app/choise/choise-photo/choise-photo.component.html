@@ -1,0 +1,13 @@
+<div class="photo-wrapper">  
+  <img src="assets/user2-photo.jpg" alt="">
+  <div class="menu">
+    <button mat-icon-button [matMenuTriggerFor]="photoMenu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #photoMenu="matMenu">
+        <button mat-menu-item>
+          Пожаловатся
+        </button>
+      </mat-menu>
+  </div>
+</div>

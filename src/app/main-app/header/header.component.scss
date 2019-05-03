@@ -93,12 +93,12 @@ footer{
     border-top: 2px solid $primary;
     font-size: 0.7em;
     padding: 1em;
+    color: #a4a4a4;
 }
-:host ::ng-deep h1{
+:host ::ng-deep h2{
     text-align: center;
     width: 100%;
     float: left;
     font-weight: 300;
     padding: 0.5em 0;
-    
 }
