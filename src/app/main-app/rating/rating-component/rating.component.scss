@@ -1,0 +1,19 @@
+.rating{
+    float: left;
+    width: 100%;
+    border: 1px solid #000;
+}
+mat-list{
+    padding: 0;
+  
+}
+mat-list-item{
+    height: auto!important;
+    padding: 0!important;
+}
+mat-list-item {
+    border-bottom: 1px solid #000;
+    &:last-child{
+        border-bottom: none;
+    }
+}

@@ -12,6 +12,8 @@ import { MatRadioModule } from '@angular/material/radio';
 import { HttpClientModule } from '@angular/common/http';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatListModule } from '@angular/material/list';
+import { MatRippleModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [],
@@ -27,7 +29,9 @@ import { MatMenuModule } from '@angular/material/menu';
     RouterModule,
     HttpClientModule,
     MatAutocompleteModule,
-    MatMenuModule
+    MatMenuModule,
+    MatListModule,
+    MatRippleModule
   ],
   imports: [
     CommonModule

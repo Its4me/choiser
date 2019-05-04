@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { EnterAccountModule } from './login/enter-account.module';
 import { SharedModule } from './shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
+import { RatingModule } from './main-app/rating/rating.module';
+
+
 
 
 @NgModule({
@@ -17,7 +20,8 @@ import { AppRoutingModule } from './app-routing.module';
       EnterAccountModule,
       SharedModule,
       AppRoutingModule,
-      ChoiseModule
+      ChoiseModule,
+      RatingModule
    ],
    providers: [],
    bootstrap: [
