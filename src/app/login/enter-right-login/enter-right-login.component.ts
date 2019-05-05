@@ -32,6 +32,7 @@ export class EnterRightLoginComponent implements OnInit {
     if(this.login.invalid){
       return;
     }
+    
     this.router.navigate(['/choise']);
   }
 

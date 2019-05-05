@@ -16,12 +16,7 @@ export class EnterRightRegisterComponent implements OnInit {
   cities: any = null;
   filterCities: any;
   filterRegions:  any;
-//   try = [
-//     {areas: ['a','b','c','d'], name: '1'}, 
-//     {areas: ['qw','er','rt','as'], name: '2'}, 
-//     {areas: ['qwe','zxc','cvb','uyu'], name: '3'}
-// ]
-    
+
     
   
   constructor(
@@ -125,22 +120,8 @@ export class EnterRightRegisterComponent implements OnInit {
       this.register[2].get('city').setValue('Выберите область');
     }
   }
-  go(radioMale){
-    console.log(radioMale);
-  }
+ 
   
-
-  
-
-  stepValid(stepNumber: number, ...valid): boolean{
-    for (let i = 0; i < valid.length; i++) {
-      if(this.register[ stepNumber ].controls[ valid[ i ] ].valid == false){
-        return false;
-      }
-    }
-    return  true;
-  }
-
   async getCities(){
     let timeCity = await this.enterServ.getCities();
     this.regions = await timeCity.areas;
@@ -180,5 +161,8 @@ export class EnterRightRegisterComponent implements OnInit {
 
     }
 
+  }
+  private registerAccount(){
+    
   }
 }
