@@ -1,9 +1,13 @@
+import { SessionService } from './../../core/session.service';
 import { EnterAccountService } from './../enter-account.service';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { map, startWith } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { async } from '@angular/core/testing';
+import { Router } from '@angular/router';
+
+import { User } from './../../core/User';
 
 @Component({
   selector: 'app-enter-right-register',
@@ -21,7 +25,9 @@ export class EnterRightRegisterComponent implements OnInit {
   
   constructor(
     private formBuilder: FormBuilder,
-    private enterServ:  EnterAccountService
+    private enterServ:  EnterAccountService,
+    private router: Router,
+    private sessionServ: SessionService
     ) {
 
     // register step 1
@@ -123,6 +129,9 @@ export class EnterRightRegisterComponent implements OnInit {
  
   
   async getCities(){
+    if(this.regions && this.filterCities){
+      return;
+    }
     let timeCity = await this.enterServ.getCities();
     this.regions = await timeCity.areas;
     this.filterCities = await timeCity.areas;
@@ -162,7 +171,35 @@ export class EnterRightRegisterComponent implements OnInit {
     }
 
   }
-  private registerAccount(){
+  registerAccount(){
+    this.register.forEach((elem)=>{
+      if(elem.invalid){
+        return;
+      }
+    });
+
+    let user: User = new User({
+        email: this.register[0].get('email').value,
+        password: this.register[0].get('pass').value,
+        confimPassword: this.register[0].get('confirmPass').value,
+        name: this.register[1].get('name').value,
+        lastname: this.register[1].get('lastname').value,
+        nickname: this.register[1].get('lastname').value,
+        sex: this.register[1].get('sex').value,
+        region: this.register[2].get('region').value,
+        city: this.register[2].get('city').value,
+    });
+    
+    this.enterServ.registerUser(user).subscribe(res =>{
+      user.id = res.id;                                              /*примерный код, зависит от бека*/
+      this.sessionServ.user = user;
+      this.router.navigate(['choise']);
+    }, err =>{
+      /*if error */
+    });
+
+
+    
     
   }
 }

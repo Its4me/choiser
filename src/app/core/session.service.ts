@@ -1,18 +1,14 @@
 import { User } from './User';
 import { Injectable } from '@angular/core';
 
+
+export const URL: string = 'localHost:3000';
+
 @Injectable({
 	providedIn: 'root'
 })
 export class SessionService {
-	user: User = new User({
-		email: 'email@.com',
-		name: 'Inna',
-		lastname: 'Oracle',
-		nickname: 'coold_Inna',
-		city: 'Киев',
-		region: 'Киевская область'
-	});
+	user: User = null
 	
 	constructor() {}
 }

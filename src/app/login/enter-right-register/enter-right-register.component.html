@@ -42,7 +42,7 @@
               </mat-error>
             </mat-form-field>
         </div>
-          <ng-container *ngIf="!register[0].valid; else nextButton">
+          <ng-container *ngIf="register[0].valid; else nextButton">
             <button mat-raised-button color="primary" matStepperNext>Дальше 1</button>
           </ng-container>
           <ng-template #nextButton>

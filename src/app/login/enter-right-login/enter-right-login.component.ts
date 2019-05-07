@@ -32,8 +32,18 @@ export class EnterRightLoginComponent implements OnInit {
     if(this.login.invalid){
       return;
     }
-    
-    this.router.navigate(['/choise']);
+
+    interface User {
+      email: string,
+      password: string
+    }
+
+    let user: User = {
+      email: this.login.get('email').value,
+      password: this.login.get('pass').value
+    }
+  
+    this.router.navigate(['choise']);
   }
 
 }
